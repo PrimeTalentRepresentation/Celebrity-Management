@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fan Experiences | PRIMETALENT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #d4af37;
+      --bg-color: #121212;
+      --text-color: #f0f0f0;
+      --card-bg: #1e1e1e;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+    }
+
+    header {
+      background: #000;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      color: var(--primary-color);
+    }
+
+    nav a {
+      color: var(--text-color);
+      margin-left: 2rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--primary-color);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 2rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--primary-color);
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .experience-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .experience-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .experience-card h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .experience-card p {
+      margin-bottom: 1.5rem;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      background: var(--primary-color);
+      color: #000;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: #f5d76e;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 1rem;
+      color: #888;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>PRIMETALENT</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="fan-experiences.html">Fan Experiences</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2 class="section-title">Exclusive Fan Experiences</h2>
+    <div class="experience-grid">
+      <div class="experience-card">
+        <h3>🎟️ Fan Card</h3>
+        <p>Get exclusive access to behind-the-scenes content, early event invites, and VIP merch.</p>
+        <div class="price">$1,000</div>
+        <a href="#contact" class="btn">Get Fan Card</a>
+      </div>
+      <div class="experience-card">
+        <h3>🤝 Meet & Greet</h3>
+        <p>Enjoy a once-in-a-lifetime opportunity to meet your favorite celebrity in person.</p>
+        <div class="price">$5,000</div>
+        <a href="#contact" class="btn">Book Now</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2026 PRIMETALENT Agency. All rights reserved.
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PRIMETALENT | Celebrity Management</title>
+  <link rel="icon" href="C:\Users\pres-\OneDrive\Desktop\html css course\img\268009_smart-light-bulb-icon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --primary-color: hwb(44 22% 17%);
+      --bg-color: #111211;
+      --text-color: #f0f0f0;
+      --card-bg: #1e1e1e;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background: #000;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      color: var(--primary-color);
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      color: var(--text-color);
+      margin-left: 2rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary-color);
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://example.com/hero.jpg') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--text-color);
+      padding: 2rem;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      color: var(--primary-color);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--primary-color);
+    }
+
+    .celeb-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .celeb-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .celeb-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+
+    .celeb-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .celeb-card h3 {
+      padding: 1rem;
+      font-size: 1.2rem;
+      color: var(--primary-color);
+    }
+
+    .services ul {
+      list-style: none;
+      padding-left: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .services li {
+      background: var(--card-bg);
+      padding: 1rem;
+      border-left: 4px solid var(--primary-color);
+    }
+
+    .contact form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .contact input, .contact textarea {
+      padding: 0.8rem;
+      border: none;
+      border-radius: 5px;
+      background: #2a2a2a;
+      color: var(--text-color);
+    }
+
+    .contact button {
+      padding: 0.8rem;
+      background: var(--primary-color);
+      border: none;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact button:hover {
+      background: #f5d76e;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 1rem;
+      color: #888;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>PRIMETALENT</h1>
+    <nav>
+      <a href="#celebrities">TALENT</a>
+      <a href="#contact">CONTACT</a>
+      <a href="fan-experiences.html">FAN EXP.</a>
+    <a href="index.html">HOME</a>
+    <a href="dashboard.html">BOOKING DASHBOARD</a>
+  </nav>
+</header>
+  </header>
+<section class="hero">
+  <div class="hero-content">
+    <img src="https://static01.nyt.com/images/2014/06/08/sports/SUB-YOUTUBE-LN/SUB-YOUTUBE-tmagArticle.jpg" width="400" length="400" alt="Celebrity Spotlight" />
+    <h2>Where Stars Shine Brighter</h2>
+    <p>Elite Celebrity Management & Global Talent Representation</p>
+  </div>
+</section>
+  <section id="celebrities">
+    <h2 class="section-title">Our Talent</h2>
+    <div class="celeb-grid">
+      <div class="celeb-card">
+        <img src="https://example.com/celeb1.jpg" alt="Celebrity 1">
+        <h3>Amara Blaze</h3>
+      </div>
+      <div class="celeb-card">
+        <img src="https://example.com/celeb2.jpg" alt="Celebrity 2">
+        <h3>Lara Pulver</h3>
+      </div>
+      <div class="celeb-card">
+        <img src="https://example.com/celeb3.jpg" alt="Celebrity 3">
+        <h3>Rina Gold</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <h2 class="section-title">What We Offer</h2>
+    <ul>
+      <li>Talent Booking & Scheduling</li>
+      <li>Brand Partnerships & Endorsements</li>
+      <li>Event Planning & Appearances</li>
+      <li>Media & Public Relations</li>
+      <li>Social Media Management</li>
+      <li>Contract Negotiation</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2 class="section-title">Get in Touch</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div style="margin-top: 2rem; text-align: center;">
+  <p>Prefer chatting? Reach us on WhatsApp:</p>
+  <a href="https://wa.me/18022073287" target="_blank" style="display: inline-block; background-color: #25D366; color: white; padding: 0.8rem 1.5rem; border-radius: 5px; text-decoration: none; font-weight: bold;">
+    Chat on WhatsApp
+  </a>
+</div>
+  </section>
+
+  <footer>
+    &copy; 2026 PRIMETALENT Agency. All rights reserved.
+  </footer>
+
+</body>
+</html>
