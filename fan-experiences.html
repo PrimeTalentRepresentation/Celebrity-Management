@@ -1,154 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fan Experiences | PRIMETALENT</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary-color: #d4af37;
-      --bg-color: #121212;
-      --text-color: #f0f0f0;
-      --card-bg: #1e1e1e;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fan Experiences | PRIMETALENT</title>
 
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      margin: 0;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
-    header {
-      background: #000;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+<style>
 
-    header h1 {
-      color: var(--primary-color);
-    }
+:root{
+--primary-color:#d4af37;
+--bg-color:#121212;
+--text-color:#f0f0f0;
+--card-bg:#1e1e1e;
+}
 
-    nav a {
-      color: var(--text-color);
-      margin-left: 2rem;
-      text-decoration: none;
-      font-weight: 600;
-    }
+/* RESET */
 
-    nav a:hover {
-      color: var(--primary-color);
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    .container {
-      max-width: 1000px;
-      margin: 3rem auto;
-      padding: 2rem;
-    }
+body{
+font-family:'Montserrat',sans-serif;
+background:var(--bg-color);
+color:var(--text-color);
+line-height:1.6;
+}
 
-    .section-title {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      color: var(--primary-color);
-    }
+/* HEADER */
 
-    .experience-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
+header{
+background:#000;
+padding:1rem 2rem;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+}
 
-    .experience-card {
-      background: var(--card-bg);
-      border-radius: 10px;
-      padding: 2rem;
-      text-align: center;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease;
-    }
+header h1{
+color:var(--primary-color);
+font-size:1.6rem;
+}
 
-    .experience-card:hover {
-      transform: translateY(-8px);
-    }
+nav{
+display:flex;
+flex-wrap:wrap;
+}
 
-    .experience-card h3 {
-      color: var(--primary-color);
-      margin-bottom: 1rem;
-    }
+nav a{
+color:var(--text-color);
+margin-left:1.5rem;
+text-decoration:none;
+font-weight:600;
+font-size:.95rem;
+}
 
-    .experience-card p {
-      margin-bottom: 1.5rem;
-    }
+nav a:hover{
+color:var(--primary-color);
+}
 
-    .price {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #fff;
-      margin-bottom: 1rem;
-    }
+/* MAIN CONTAINER */
 
-    .btn {
-      background: var(--primary-color);
-      color: #000;
-      padding: 0.7rem 1.5rem;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-    }
+.container{
+max-width:1000px;
+margin:3rem auto;
+padding:2rem;
+}
 
-    .btn:hover {
-      background: #f5d76e;
-    }
+.section-title{
+text-align:center;
+font-size:2rem;
+margin-bottom:2rem;
+color:var(--primary-color);
+}
 
-    footer {
-      background: #000;
-      text-align: center;
-      padding: 1rem;
-      color: #888;
-      margin-top: 4rem;
-    }
-  </style>
+/* EXPERIENCE GRID */
+
+.experience-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:2rem;
+}
+
+.experience-card{
+background:var(--card-bg);
+border-radius:10px;
+padding:2rem;
+text-align:center;
+box-shadow:0 8px 16px rgba(0,0,0,0.3);
+transition:transform .3s ease;
+}
+
+.experience-card:hover{
+transform:translateY(-8px);
+}
+
+.experience-card h3{
+color:var(--primary-color);
+margin-bottom:1rem;
+font-size:1.3rem;
+}
+
+.experience-card p{
+margin-bottom:1.5rem;
+font-size:.95rem;
+}
+
+.price{
+font-size:1.5rem;
+font-weight:bold;
+color:#fff;
+margin-bottom:1rem;
+}
+
+/* BUTTON */
+
+.btn{
+background:var(--primary-color);
+color:#000;
+padding:.8rem 1.6rem;
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+text-decoration:none;
+display:inline-block;
+}
+
+.btn:hover{
+background:#f5d76e;
+}
+
+/* FOOTER */
+
+footer{
+background:#000;
+text-align:center;
+padding:1rem;
+color:#888;
+margin-top:4rem;
+font-size:.9rem;
+}
+
+/* 📱 MOBILE RESPONSIVE */
+
+@media (max-width:768px){
+
+header{
+flex-direction:column;
+align-items:flex-start;
+}
+
+nav{
+margin-top:.5rem;
+}
+
+nav a{
+margin:0.5rem 1rem 0.5rem 0;
+}
+
+.container{
+margin:2rem auto;
+padding:1.5rem;
+}
+
+.section-title{
+font-size:1.6rem;
+}
+
+.experience-card{
+padding:1.5rem;
+}
+
+.price{
+font-size:1.3rem;
+}
+
+}
+
+</style>
 </head>
+
 <body>
 
-  <header>
-    <h1>PRIMETALENT</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="dashboard.html">Dashboard</a>
-      <a href="fan-experiences.html">Fan Exp.</a>
-    </nav>
-  </header>
+<header>
+<h1>PRIMETALENT</h1>
 
-  <div class="container">
-    <h2 class="section-title">Exclusive Fan Experiences</h2>
-    <div class="experience-grid">
-      <div class="experience-card">
-        <h3>🎟️ Fan Card</h3>
-        <p>Get exclusive access to behind-the-scenes content, early event invites, and VIP merch.</p>
-        <div class="price">$1,000</div>
-        <a href="#contact" class="btn">Get Fan Card</a>
-      </div>
-      <div class="experience-card">
-        <h3>🤝 Meet & Greet</h3>
-        <p>Enjoy a once-in-a-lifetime opportunity to meet your favorite celebrity in person.</p>
-        <div class="price">$5,000</div>
-        <a href="#contact" class="btn">Book Now</a>
-      </div>
-    </div>
-  </div>
+<nav>
+<a href="index.html">Home</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="fan-experiences.html">Fan Exp.</a>
+</nav>
 
-  <footer>
-    &copy; 2026 PRIMETALENT Agency. All rights reserved.
-  </footer>
+</header>
+
+<div class="container">
+
+<h2 class="section-title">Exclusive Fan Experiences</h2>
+
+<div class="experience-grid">
+
+<div class="experience-card">
+<h3>🎟️ Fan Card</h3>
+
+<p>
+Get exclusive access to behind-the-scenes content,
+early event invites, and VIP merch.
+</p>
+
+<div class="price">$1,000</div>
+
+<a href="#contact" class="btn">Get Fan Card</a>
+
+</div>
+
+<div class="experience-card">
+
+<h3>🤝 Meet & Greet</h3>
+
+<p>
+Enjoy a once-in-a-lifetime opportunity
+to meet your favorite celebrity in person.
+</p>
+
+<div class="price">$5,000</div>
+
+<a href="#contact" class="btn">Book Now</a>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 PRIMETALENT Agency. All rights reserved.
+</footer>
 
 </body>
-
 </html>
