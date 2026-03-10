@@ -118,12 +118,12 @@ tr:hover{
     <table>
       <thead>
         <tr>
-          <th>Celebrity</th>
-          <th>Client</th>
-          <th>Date</th>
-          <th>Event</th>
-          <th>Status</th>
-          <th>Action</th>
+          <th scope="col">Celebrity</th>
+          <th scope="col">Client</th>
+          <th scope="col">Date</th>
+          <th scope="col">Event</th>
+          <th scope="col">Status</th>
+          <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody id="booking-table-body"></tbody>
@@ -159,46 +159,24 @@ const bookings = [
 {celebrity:"Ryan Volt",client:"Tech Conference",date:"2026-10-05",event:"Guest Speaker",status:"Pending"},
 {celebrity:"Naomi Sky",client:"Beauty Brand Launch",date:"2026-10-17",event:"Brand Ambassador",status:"Confirmed"},
 {celebrity:"Tyler Prince",client:"Sports Awards",date:"2026-11-01",event:"Award Presenter",status:"Pending"},
-{celebrity:"Eva Diamond",client:"Luxury Fashion Show",date:"2026-11-12",event:"Runway Appearance",status:"Confirmed"}
+{celebrity:"Eva Diamond",client:"Luxury Expo",date:"2026-11-12",event:"Guest Appearance",status:"Confirmed"}
 ];
 
-const tableBody = document.getElementById("booking-table-body");
-
-function renderTable(){
-  tableBody.innerHTML = "";
-  bookings.forEach((booking,index)=>{
-    const row = document.createElement("tr");
-    row.innerHTML = `
-      <td>${booking.celebrity}</td>
-      <td>${booking.client}</td>
-      <td>${booking.date}</td>
-      <td>${booking.event}</td>
-      <td>${booking.status}</td>
-      <td>
-        ${booking.status==="Pending"
-          ? <button class="btn" onclick="approveBooking(${index})">Approve</button>
-          : `<button class="btn" onclick="viewBooking(${index})">View</button>`}
-      </td>
-    `;
-    tableBody.appendChild(row);
-  });
-}
-
-window.approveBooking = function(index){
-  bookings[index].status="Confirmed";
-  renderTable();
-  alert("Booking approved.");
-}
-
-window.viewBooking = function(index){
-  const b = bookings[index];
-  alert(Celebrity: ${b.celebrity}\nClient: ${b.client}\nDate: ${b.date}\nEvent: ${b.event}\nStatus: ${b.status});
-}
-
-renderTable();
+const tbody = document.getElementById("booking-table-body");
+bookings.forEach(b => {
+  const row = document.createElement("tr");
+  row.innerHTML = `
+    <td>${b.celebrity}</td>
+    <td>${b.client}</td>
+    <td>${b.date}</td>
+    <td>${b.event}</td>
+    <td>${b.status}</td>
+    <td><button class="btn">View</button></td>
+  `;
+  tbody.appendChild(row);
+});
 
 });
 </script>
-
 </body>
 </html>
