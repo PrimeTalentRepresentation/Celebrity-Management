@@ -262,11 +262,77 @@ padding:2.5rem 1rem;
 
 }
 
+  /* PAGE LOADER */
+
+#loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#111211;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+opacity:0;
+pointer-events:none;
+transition:opacity .4s ease;
+}
+
+#loader.active{
+opacity:1;
+pointer-events:auto;
+}
+
+#loader img{
+width:70px;
+animation:spin 1.2s linear infinite;
+}
+
+/* spin animation */
+
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+  <script>
+
+/* SHOW LOADER WHEN LINK IS CLICKED */
+
+const links = document.querySelectorAll("a[href]");
+const loader = document.getElementById("loader");
+
+links.forEach(link => {
+
+link.addEventListener("click", function(e){
+
+const target = link.getAttribute("href");
+
+/* ignore external links */
+if(target.startsWith("http") || target.startsWith("#")) return;
+
+loader.classList.add("active");
+
+});
+
+});
+
+/* HIDE LOADER WHEN PAGE LOADS */
+
+window.addEventListener("load", () => {
+loader.classList.remove("active");
+});
+
+</script>
 </style>
 </head>
 
 <body>
 
+  <div id="loader">
+  <img src="img/bulb-icon.svg" alt="Loading">
+</div>
 <header>
 <h1>PRIMETALENT</h1>
 <nav>
@@ -378,5 +444,6 @@ observer.observe(item);
   
 </body>
 </html>
+
 
 
