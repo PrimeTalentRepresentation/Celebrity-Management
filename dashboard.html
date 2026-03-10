@@ -260,7 +260,7 @@ function renderTable() {
       <td>${booking.status}</td>
       <td>
         ${booking.status === "Pending"
-          ? <button class="btn" onclick="approveBooking(${index})">Approve</button>
+          ? `<button class="btn" onclick="approveBooking(${index})">Approve</button>`
           : `<button class="btn" onclick="viewBooking(${index})">View</button>`}
       </td>
     `;
@@ -272,7 +272,7 @@ function renderTable() {
 function approveBooking(index) {
   bookings[index].status = "Confirmed";
   renderTable();
-  alert(Booking for ${bookings[index].celebrity} has been approved.);
+  alert(`Booking for ${bookings[index].celebrity} has been approved.`);
 }
 
 function viewBooking(index) {
@@ -284,5 +284,6 @@ renderTable();
 </script>
 </body>
 </html>
+
 
 
