@@ -157,130 +157,132 @@
       </tbody>
     </table>
   </div>
-
   <script>
-    const bookings = [
-      {
-        celebrity: "Amara Blaze",
-        client: "Global Music Fest",
-        date: "2026-03-15",
-        event: "Live Performance",
-        status: "Confirmed"
-      },
-      {
-        celebrity: "Lara Pulver",
-        client: "BrandX Launch",
-        date: "2026-04-02",
-        event: "Endorsement",
-        status: "Pending"
-      },
-      {
-        celebrity: "Rina Gold",
-        client: "Fashion Gala",
-        date: "2026-05-10",
-        event: "Red Carpet Appearance",
-        status: "Pending"
-      }
-    ];
+const bookings = [
+  {
+    celebrity: "Amara Blaze",
+    client: "Global Music Fest",
+    date: "2026-03-15",
+    event: "Live Performance",
+    status: "Confirmed"
+  },
+  {
+    celebrity: "Lara Pulver",
+    client: "BrandX Launch",
+    date: "2026-04-02",
+    event: "Endorsement",
+    status: "Pending"
+  },
+  {
+    celebrity: "Rina Gold",
+    client: "Fashion Gala",
+    date: "2026-05-10",
+    event: "Red Carpet Appearance",
+    status: "Pending"
+  },
+  {
+    celebrity: "Jason Creed",
+    client: "City Awards",
+    date: "2026-03-20",
+    event: "Award Presentation",
+    status: "Confirmed"
+  },
+  {
+    celebrity: "Bella Storm",
+    client: "Elite Fashion Week",
+    date: "2026-04-11",
+    event: "Runway Appearance",
+    status: "Pending"
+  },
+  {
+    celebrity: "Mike Thunder",
+    client: "Sports Brand Pro",
+    date: "2026-04-18",
+    event: "Brand Endorsement",
+    status: "Confirmed"
+  },
+  {
+    celebrity: "Nina Royale",
+    client: "Luxury Watch Co",
+    date: "2026-05-03",
+    event: "Product Launch",
+    status: "Pending"
+  },
+  {
+    celebrity: "Chris Titan",
+    client: "Mega Tech Expo",
+    date: "2026-05-14",
+    event: "Guest Appearance",
+    status: "Confirmed"
+  },
+  {
+    celebrity: "Sophia Lux",
+    client: "Diamond Beauty",
+    date: "2026-06-01",
+    event: "Brand Ambassador Event",
+    status: "Pending"
+  },
+  {
+    celebrity: "Leo Vance",
+    client: "Nightlife Awards",
+    date: "2026-06-08",
+    event: "Host",
+    status: "Pending"
+  },
+  {
+    celebrity: "Diana Blaze",
+    client: "Summer Music Fest",
+    date: "2026-06-20",
+    event: "Live Performance",
+    status: "Confirmed"
+  },
+  {
+    celebrity: "Tony Flash",
+    client: "Auto World Expo",
+    date: "2026-07-02",
+    event: "Special Guest",
+    status: "Pending"
+  }
+];
 
-    const tableBody = document.getElementById("booking-table-body");
+const tableBody = document.getElementById("booking-table-body");
 
-    function renderTable() {
-      tableBody.innerHTML = "";
-      bookings.forEach((booking, index) => {
-        const row = document.createElement("tr");
+function renderTable() {
+  tableBody.innerHTML = "";
+  bookings.forEach((booking, index) => {
+    const row = document.createElement("tr");
 
-        row.innerHTML = `
-          <td>${booking.celebrity}</td>
-          <td>${booking.client}</td>
-          <td>${booking.date}</td>
-          <td>${booking.event}</td>
-          <td>${booking.status}</td>
-          <td>
-            ${booking.status === "Pending"
-              ? `<button class="btn" onclick="approveBooking(${index})">Approve</button>`
-              : `<button class="btn" onclick="viewBooking(${index})">View</button>`}
-          </td>
-        `;
+    row.innerHTML = `
+      <td>${booking.celebrity}</td>
+      <td>${booking.client}</td>
+      <td>${booking.date}</td>
+      <td>${booking.event}</td>
+      <td>${booking.status}</td>
+      <td>
+        ${booking.status === "Pending"
+          ? <button class="btn" onclick="approveBooking(${index})">Approve</button>
+          : `<button class="btn" onclick="viewBooking(${index})">View</button>`}
+      </td>
+    `;
 
-        tableBody.appendChild(row);
-      });
-    }
+    tableBody.appendChild(row);
+  });
+}
 
-    function approveBooking(index) {
-      bookings[index].status = "Confirmed";
-      renderTable();
-      alert(`Booking for ${bookings[index].celebrity} has been approved.`);
-    }
+function approveBooking(index) {
+  bookings[index].status = "Confirmed";
+  renderTable();
+  alert(Booking for ${bookings[index].celebrity} has been approved.);
+}
 
-    function viewBooking(index) {
-      const b = bookings[index];
-      alert(`Booking Details:\n\nCelebrity: ${b.celebrity}\nClient: ${b.client}\nDate: ${b.date}\nEvent: ${b.event}\nStatus: ${b.status}`);
-    }
+function viewBooking(index) {
+  const b = bookings[index];
+  alert(Booking Details:\n\nCelebrity: ${b.celebrity}\nClient: ${b.client}\nDate: ${b.date}\nEvent: ${b.event}\nStatus: ${b.status});
+}
 
-    renderTable();
-     const bookings = [
-      {
-        celebrity: "Amara Blaze",
-        client: "Cannes Film Fest",
-        date: "2026-03-15",
-        event: "Live Performance",
-        status: "Confirmed"
-      },
-      {
-        celebrity: "Lara Pulver",
-        client: "Digital Conferences Ltd",
-        date: "2026-04-02",
-        event: "Virtual Event",
-        status: "Pending"
-      },
-      {
-        celebrity: "Rina Gold",
-        client: "Fashion Gala",
-        date: "2026-05-10",
-        event: "Fashion Show & Runway",
-        status: "Pending"
-      }
-    ];
-
-    const tableBody = document.getElementById("booking-table-body");
-
-    function renderTable() {
-      tableBody.innerHTML = "";
-      bookings.forEach((booking, index) => {
-        const row = document.createElement("tr");
-
-        row.innerHTML = `
-          <td>${booking.celebrity}</td>
-          <td>${booking.client}</td>
-          <td>${booking.date}</td>
-          <td>${booking.event}</td>
-          <td>${booking.status}</td>
-          <td>
-            ${booking.status === "Pending"
-              ? `<button class="btn" onclick="approveBooking(${index})">Approve</button>`
-              : `<button class="btn" onclick="viewBooking(${index})">View</button>`}
-          </td>
-        `;
-
-        tableBody.appendChild(row);
-      });
-    }
-
-    function approveBooking(index) {
-      bookings[index].status = "Confirmed";
-      renderTable();
-      alert(`Booking for ${bookings[index].celebrity} has been approved.`);
-    }
-
-    function viewBooking(index) {
-      const b = bookings[index];
-      alert(`Booking Details:\n\nCelebrity: ${b.celebrity}\nClient: ${b.client}\nDate: ${b.date}\nEvent: ${b.event}\nStatus: ${b.status}`);
-    }
-
-    renderTable();
-  </script>
-
+renderTable();
+</script>
 </body>
 </html>
+
 
