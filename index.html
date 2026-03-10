@@ -153,7 +153,31 @@ background:var(--card-bg);
 padding:1rem;
 border-left:4px solid var(--primary-color);
 }
+/* SERVICES ANIMATION */
 
+.services li{
+background:var(--card-bg);
+padding:1rem;
+border-left:4px solid var(--primary-color);
+
+opacity:0;
+transform:translateX(-60px);
+transition:all .7s ease;
+}
+
+/* items from the right */
+
+.services li:nth-child(even){
+transform:translateX(60px);
+}
+
+/* when visible */
+
+.services li.show{
+opacity:1;
+transform:translateX(0);
+}
+  
 /* CONTACT */
 
 .contact form{
@@ -324,7 +348,35 @@ Chat on WhatsApp
 <footer>
 © 2026 PRIMETALENT Agency. All rights reserved.
 </footer>
+<script>
 
+const serviceItems = document.querySelectorAll(".services li");
+
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+serviceItems.forEach((item,index)=>{
+setTimeout(()=>{
+item.classList.add("show");
+}, index * 200);
+});
+
+}
+
+});
+},{
+threshold:0.2
+});
+
+serviceItems.forEach(item=>{
+observer.observe(item);
+});
+
+</script>
+  
 </body>
 </html>
+
 
