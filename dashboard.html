@@ -1,145 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BOOKINGS | PRIMETALENT</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
- <style>
-  body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #121212;
-    color: #f0f0f0;
-    margin: 0;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRIMETALENT | BOOKINGS</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{
+  font-family:'Montserrat',sans-serif;
+  background:#121212;
+  color:#f0f0f0;
+  margin:0;
+}
+header{
+  background:#000;
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+header h1{
+  color:#d4af37;
+  font-size:1.5rem;
+}
+nav{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+nav a{
+  color:#f0f0f0;
+  text-decoration:none;
+  font-weight:600;
+}
+nav a:hover{
+  color:#d4af37;
+}
+.dashboard{
+  max-width:1000px;
+  margin:auto;
+  padding:20px;
+}
+.dashboard-box{
+  background:#1e1e1e;
+  border-radius:10px;
+  padding:20px;
+  overflow-x:auto;
+}
+h2{
+  color:#d4af37;
+  margin-bottom:15px;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:600px;
+}
+th,td{
+  padding:10px;
+  border-bottom:1px solid #333;
+  text-align:left;
+  font-size:0.9rem;
+}
+th{
+  background:#2a2a2a;
+}
+tr:hover{
+  background:#2f2f2f;
+}
+.btn{
+  background:#d4af37;
+  color:#000;
+  border:none;
+  padding:5px 10px;
+  border-radius:5px;
+  cursor:pointer;
+  font-weight:bold;
+  font-size:0.8rem;
+}
+.btn:hover{
+  background:#f5d76e;
+}
+/* MOBILE */
+@media(max-width:600px){
+  header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
   }
-
-  header {
-    background: #000;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+  header h1{
+    font-size:1.2rem;
   }
-
-  header h1 {
-    color: #d4af37;
-    font-size: 1.5rem;
+  nav a{
+    font-size:0.85rem;
   }
-
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+  th,td{
+    font-size:0.8rem;
+    padding:8px;
   }
-
-  nav a {
-    color: #f0f0f0;
-    margin-left: 2rem;
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-  nav a:hover {
-    color: #d4af37;
-  }
-
-  .dashboard {
-    max-width: 100%;
-    margin: 1rem;
-    padding: 1rem;
-    background: #1e1e1e;
-    border-radius: 10px;
-    overflow-x: auto;
-  }
-
-  .dashboard h2 {
-    color: #d4af37;
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-    font-size: 0.9rem;
-  }
-
-  th, td {
-    padding: 0.5rem;
-    border-bottom: 1px solid #333;
-    text-align: left;
-    white-space: nowrap;
-  }
-
-  th {
-    background-color: #2a2a2a;
-  }
-
-  tr:hover {
-    background-color: #2f2f2f;
-  }
-
-  .btn {
-    background: #d4af37;
-    color: #000;
-    padding: 0.3rem 0.6rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 0.8rem;
-  }
-
-  .btn:hover {
-    background: #f5d76e;
-  }
-
-  /* Responsive for phones */
-  @media (max-width: 600px) {
-    header {
-      padding: 1rem;
-    }
-
-    header h1 {
-      font-size: 1.2rem;
-    }
-
-    nav a {
-      margin-left: 0;
-      font-size: 0.9rem;
-    }
-
-    .dashboard {
-      padding: 0.5rem;
-      margin: 0.5rem;
-    }
-
-    th, td {
-      padding: 0.4rem;
-      font-size: 0.8rem;
-    }
-
-    .btn {
-      padding: 0.2rem 0.4rem;
-      font-size: 0.7rem;
-    }
-  }
+}
 </style>
 </head>
 <body>
+<header>
+  <h1>PRIMETALENT</h1>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="dashboard.html">BOOKINGS</a>
+    <a href="fan-experiences.html">FAN EXP.</a>
+  </nav>
+</header>
 
-  <header>
-    <h1>PRIMETALENT</h1>
-    <nav>
-      <a href="index.html">HOME</a>
-      <a href="dashboard.html">BOOKINGS</a>
-      <a href="fan-experiences.html">FAN EXP.</a>
-    </nav>
-  </header>
-
-  <div class="dashboard">
+<div class="dashboard">
+  <div class="dashboard-box">
     <h2>Booking Dashboard</h2>
     <table>
       <thead>
@@ -152,106 +126,48 @@
           <th>Action</th>
         </tr>
       </thead>
-      <tbody id="booking-table-body">
-        <!-- JavaScript will populate this -->
-      </tbody>
+      <tbody id="booking-table-body"></tbody>
     </table>
   </div>
-  <script>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
 const bookings = [
-  {
-    celebrity: "Amara Blaze",
-    client: "Global Music Fest",
-    date: "2026-03-15",
-    event: "Live Performance",
-    status: "Confirmed"
-  },
-  {
-    celebrity: "Lara Pulver",
-    client: "BrandX Launch",
-    date: "2026-04-02",
-    event: "Endorsement",
-    status: "Pending"
-  },
-  {
-    celebrity: "Rina Gold",
-    client: "Fashion Gala",
-    date: "2026-05-10",
-    event: "Red Carpet Appearance",
-    status: "Pending"
-  },
-  {
-    celebrity: "Jason Creed",
-    client: "City Awards",
-    date: "2026-03-20",
-    event: "Award Presentation",
-    status: "Confirmed"
-  },
-  {
-    celebrity: "Bella Storm",
-    client: "Elite Fashion Week",
-    date: "2026-04-11",
-    event: "Runway Appearance",
-    status: "Pending"
-  },
-  {
-    celebrity: "Mike Thunder",
-    client: "Sports Brand Pro",
-    date: "2026-04-18",
-    event: "Brand Endorsement",
-    status: "Confirmed"
-  },
-  {
-    celebrity: "Nina Royale",
-    client: "Luxury Watch Co",
-    date: "2026-05-03",
-    event: "Product Launch",
-    status: "Pending"
-  },
-  {
-    celebrity: "Chris Titan",
-    client: "Mega Tech Expo",
-    date: "2026-05-14",
-    event: "Guest Appearance",
-    status: "Confirmed"
-  },
-  {
-    celebrity: "Sophia Lux",
-    client: "Diamond Beauty",
-    date: "2026-06-01",
-    event: "Brand Ambassador Event",
-    status: "Pending"
-  },
-  {
-    celebrity: "Leo Vance",
-    client: "Nightlife Awards",
-    date: "2026-06-08",
-    event: "Host",
-    status: "Pending"
-  },
-  {
-    celebrity: "Diana Blaze",
-    client: "Summer Music Fest",
-    date: "2026-06-20",
-    event: "Live Performance",
-    status: "Confirmed"
-  },
-  {
-    celebrity: "Tony Flash",
-    client: "Auto World Expo",
-    date: "2026-07-02",
-    event: "Special Guest",
-    status: "Pending"
-  }
+{celebrity:"Amara Blaze",client:"Global Music Fest",date:"2026-03-15",event:"Live Performance",status:"Confirmed"},
+{celebrity:"Lara Pulver",client:"BrandX Launch",date:"2026-04-02",event:"Endorsement",status:"Pending"},
+{celebrity:"Rina Gold",client:"Fashion Gala",date:"2026-05-10",event:"Red Carpet Appearance",status:"Pending"},
+{celebrity:"Jason Creed",client:"City Awards",date:"2026-03-20",event:"Award Presentation",status:"Confirmed"},
+{celebrity:"Bella Storm",client:"Elite Fashion Week",date:"2026-04-11",event:"Runway Appearance",status:"Pending"},
+{celebrity:"Mike Thunder",client:"Sports Brand Pro",date:"2026-04-18",event:"Brand Endorsement",status:"Confirmed"},
+{celebrity:"Nina Royale",client:"Luxury Watch Co",date:"2026-05-03",event:"Product Launch",status:"Pending"},
+{celebrity:"Chris Titan",client:"Mega Tech Expo",date:"2026-05-14",event:"Guest Appearance",status:"Confirmed"},
+{celebrity:"Sophia Lux",client:"Diamond Beauty",date:"2026-06-01",event:"Brand Ambassador Event",status:"Pending"},
+{celebrity:"Leo Vance",client:"Nightlife Awards",date:"2026-06-08",event:"Host",status:"Pending"},
+{celebrity:"Diana Blaze",client:"Summer Music Fest",date:"2026-06-20",event:"Live Performance",status:"Confirmed"},
+{celebrity:"Tony Flash",client:"Auto World Expo",date:"2026-07-02",event:"Special Guest",status:"Pending"},
+{celebrity:"Kelly Nova",client:"Beauty Expo",date:"2026-07-08",event:"Product Launch",status:"Confirmed"},
+{celebrity:"Marcus Steel",client:"Fitness Summit",date:"2026-07-15",event:"Motivational Talk",status:"Pending"},
+{celebrity:"Angel Star",client:"Hollywood Nights",date:"2026-07-22",event:"Guest Appearance",status:"Confirmed"},
+{celebrity:"Victor Blaze",client:"Gaming Con",date:"2026-08-03",event:"Celebrity Match",status:"Pending"},
+{celebrity:"Stella Rose",client:"Luxury Gala",date:"2026-08-11",event:"Red Carpet Appearance",status:"Confirmed"},
+{celebrity:"David Crown",client:"Business Leaders Forum",date:"2026-08-19",event:"Keynote Speaker",status:"Pending"},
+{celebrity:"Ruby Knight",client:"Fashion Week",date:"2026-09-02",event:"Runway Appearance",status:"Confirmed"},
+{celebrity:"Alex Storm",client:"Music Awards",date:"2026-09-15",event:"Performance",status:"Pending"},
+{celebrity:"Luna Silver",client:"Art & Culture Expo",date:"2026-09-28",event:"Special Guest",status:"Confirmed"},
+{celebrity:"Ryan Volt",client:"Tech Conference",date:"2026-10-05",event:"Guest Speaker",status:"Pending"},
+{celebrity:"Naomi Sky",client:"Beauty Brand Launch",date:"2026-10-17",event:"Brand Ambassador",status:"Confirmed"},
+{celebrity:"Tyler Prince",client:"Sports Awards",date:"2026-11-01",event:"Award Presenter",status:"Pending"},
+{celebrity:"Eva Diamond",client:"Luxury Fashion Show",date:"2026-11-12",event:"Runway Appearance",status:"Confirmed"}
 ];
 
 const tableBody = document.getElementById("booking-table-body");
 
-function renderTable() {
+function renderTable(){
   tableBody.innerHTML = "";
-  bookings.forEach((booking, index) => {
+  bookings.forEach((booking,index)=>{
     const row = document.createElement("tr");
-
     row.innerHTML = `
       <td>${booking.celebrity}</td>
       <td>${booking.client}</td>
@@ -259,31 +175,30 @@ function renderTable() {
       <td>${booking.event}</td>
       <td>${booking.status}</td>
       <td>
-        ${booking.status === "Pending"
-          ? `<button class="btn" onclick="approveBooking(${index})">Approve</button>`
+        ${booking.status==="Pending"
+          ? <button class="btn" onclick="approveBooking(${index})">Approve</button>
           : `<button class="btn" onclick="viewBooking(${index})">View</button>`}
       </td>
     `;
-
     tableBody.appendChild(row);
   });
 }
 
-function approveBooking(index) {
-  bookings[index].status = "Confirmed";
+window.approveBooking = function(index){
+  bookings[index].status="Confirmed";
   renderTable();
-  alert(`Booking for ${bookings[index].celebrity} has been approved.`);
+  alert("Booking approved.");
 }
 
-function viewBooking(index) {
+window.viewBooking = function(index){
   const b = bookings[index];
-  alert(Booking Details:\n\nCelebrity: ${b.celebrity}\nClient: ${b.client}\nDate: ${b.date}\nEvent: ${b.event}\nStatus: ${b.status});
+  alert(Celebrity: ${b.celebrity}\nClient: ${b.client}\nDate: ${b.date}\nEvent: ${b.event}\nStatus: ${b.status});
 }
 
 renderTable();
+
+});
 </script>
+
 </body>
 </html>
-
-
-
