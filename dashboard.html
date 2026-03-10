@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Booking Dashboard | PRIMETALENT</title>
+  <title>BOOKINGS | PRIMETALENT</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
  <style>
   body {
@@ -133,9 +133,9 @@
   <header>
     <h1>PRIMETALENT</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="dashboard.html">Booking Dashboard</a>
-      <a href="fan-experiences.html">Fan Experiences</a>
+      <a href="index.html">HOME</a>
+      <a href="dashboard.html">BOOKINGS</a>
+      <a href="fan-experiences.html">FAN EXP.</a>
     </nav>
   </header>
 
@@ -219,7 +219,68 @@
     }
 
     renderTable();
+     const bookings = [
+      {
+        celebrity: "Amara Blaze",
+        client: "Cannes Film Fest",
+        date: "2026-03-15",
+        event: "Live Performance",
+        status: "Confirmed"
+      },
+      {
+        celebrity: "Lara Pulver",
+        client: "Digital Conferences Ltd",
+        date: "2026-04-02",
+        event: "Virtual Event",
+        status: "Pending"
+      },
+      {
+        celebrity: "Rina Gold",
+        client: "Fashion Gala",
+        date: "2026-05-10",
+        event: "Fashion Show & Runway",
+        status: "Pending"
+      }
+    ];
+
+    const tableBody = document.getElementById("booking-table-body");
+
+    function renderTable() {
+      tableBody.innerHTML = "";
+      bookings.forEach((booking, index) => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+          <td>${booking.celebrity}</td>
+          <td>${booking.client}</td>
+          <td>${booking.date}</td>
+          <td>${booking.event}</td>
+          <td>${booking.status}</td>
+          <td>
+            ${booking.status === "Pending"
+              ? `<button class="btn" onclick="approveBooking(${index})">Approve</button>`
+              : `<button class="btn" onclick="viewBooking(${index})">View</button>`}
+          </td>
+        `;
+
+        tableBody.appendChild(row);
+      });
+    }
+
+    function approveBooking(index) {
+      bookings[index].status = "Confirmed";
+      renderTable();
+      alert(`Booking for ${bookings[index].celebrity} has been approved.`);
+    }
+
+    function viewBooking(index) {
+      const b = bookings[index];
+      alert(`Booking Details:\n\nCelebrity: ${b.celebrity}\nClient: ${b.client}\nDate: ${b.date}\nEvent: ${b.event}\nStatus: ${b.status}`);
+    }
+
+    renderTable();
   </script>
 
 </body>
 </html>
+
