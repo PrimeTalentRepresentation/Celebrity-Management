@@ -268,6 +268,8 @@ padding:2.5rem 1rem;
 
 }
 
+
+Greg
 /* PAGE LOADER */
 #loader {
   position: fixed;
@@ -281,9 +283,11 @@ padding:2.5rem 1rem;
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .6s ease;
+
+  opacity: 1; /* show loader first */
+  pointer-events: auto;
+
+  transition: opacity .6s ease, visibility .6s;
 }
 
 #loader.active {
@@ -436,7 +440,10 @@ links.forEach(link => {
 
 // Hide loader when page loads
 window.addEventListener("load", () => {
-  loader.classList.remove("active");
+  setTimeout(() => {
+    loader.style.opacity = "0";
+    loader.style.pointerEvents = "none";
+  }, 700);
 });
 
 
@@ -470,6 +477,7 @@ serviceItems.forEach(item=>{
   
 </body>
 </html>
+
 
 
 
