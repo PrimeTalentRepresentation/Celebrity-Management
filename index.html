@@ -424,6 +424,7 @@ Chat on WhatsApp
   // Elements
   const loader = document.getElementById("loader");
   const main = document.getElementById("main-content");
+  const serviceItems = document.querySelectorAll('.services li');
 
   // Show page after loading
   window.addEventListener("load", function () {
@@ -436,6 +437,9 @@ Chat on WhatsApp
         const target = document.querySelector(window.location.hash);
         if (target) target.scrollIntoView({ behavior: "smooth" });
       }
+
+      // Animate services items visible on load
+      animateServices();
     }, 1000);
   });
 
@@ -462,14 +466,10 @@ Chat on WhatsApp
       }, 600);
     });
   });
-</script>
-  
-<script>
-  // Animate services list items on scroll
-  const serviceItems = document.querySelectorAll('.services li');
 
-  function showServicesOnScroll() {
-    const triggerBottom = window.innerHeight * 0.85; // when 85% of viewport
+  // Function to animate services list items
+  function animateServices() {
+    const triggerBottom = window.innerHeight * 0.85;
     serviceItems.forEach(item => {
       const itemTop = item.getBoundingClientRect().top;
       if (itemTop < triggerBottom) {
@@ -478,12 +478,13 @@ Chat on WhatsApp
     });
   }
 
-  window.addEventListener('scroll', showServicesOnScroll);
-  window.addEventListener('load', showServicesOnScroll); // also trigger on load
+  // Animate on scroll
+  window.addEventListener('scroll', animateServices);
 </script>
 
 </body>
 </html>
+
 
 
 
