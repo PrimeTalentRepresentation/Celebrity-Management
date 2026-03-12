@@ -7,22 +7,28 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <style>
 
-/* Smaller header buttons for straight alignment */
-header nav.header-buttons a {
-  display: inline-block;
-  padding: 0.4rem 0.9rem;  /* slightly smaller */
-  border-radius: 5px;      /* simple rounded corners */
-  background: var(--primary-color);
-  color: #000;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;       /* smaller font for alignment */
-  transition: background 0.3s ease, color 0.3s ease;
-}
+/* Dynamically scale header buttons on very small screens */
+@media (max-width: 480px) {
+  header nav.header-buttons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 100%;
+  }
 
-header nav.header-buttons a:hover {
-  background: hwb(44 22% 10%);
-  color: #fff;
+  header nav.header-buttons a {
+    flex: 1 1 auto;           /* allow buttons to shrink/grow */
+    text-align: center;
+    padding: 0.4rem 0.6rem;   /* smaller padding for tiny screens */
+    font-size: 0.8rem;        /* smaller font size */
+    transform-origin: center; /* scale from center */
+    transition: transform 0.2s ease;
+  }
+
+  /* Optional: subtle hover/press scale effect for touch devices */
+  header nav.header-buttons a:active {
+    transform: scale(0.95);
+  }
 }
   
 body{
@@ -318,6 +324,7 @@ loader.classList.remove("active");
 </script>
 </body>
 </html>
+
 
 
 
