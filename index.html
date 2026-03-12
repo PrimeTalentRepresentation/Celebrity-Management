@@ -407,16 +407,15 @@ Chat on WhatsApp
 © 2026 PRIMETALENT Agency. All rights reserved.
 </footer>
 <script>
-  // Select all internal links and the loader element
   const links = document.querySelectorAll("a[href]");
   const loader = document.getElementById("loader");
 
-  // Show loader when a link is clicked
+  // Show loader when an internal link is clicked
   links.forEach(link => {
     link.addEventListener("click", function(e) {
       const target = link.getAttribute("href");
 
-      // Ignore external links and anchors
+      // Ignore external links (http/https) and anchors (#)
       if (target.startsWith("http") || target.startsWith("#")) return;
 
       loader.classList.add("active");
@@ -427,64 +426,9 @@ Chat on WhatsApp
   window.addEventListener("load", () => {
     setTimeout(() => {
       loader.classList.remove("active");
-    }, 800); // delay for smoother fade-out
+    }, 800); // smooth fade-out
   });
-</script>
-<script>
-
-const serviceItems = document.querySelectorAll(".services li");
-
-const observer = new IntersectionObserver(entries => {
-entries.forEach(entry => {
-
-if(entry.isIntersecting){
-
-serviceItems.forEach((item,index)=>{
-setTimeout(()=>{
-item.classList.add("show");
-}, index * 200);
-});
-
-}
-
-});
-},{
-threshold:0.2
-});
-
-serviceItems.forEach(item=>{
-observer.observe(item);
-});
-
-</script>
-    <script>
-
-/* SHOW LOADER WHEN LINK IS CLICKED */
-
-const links = document.querySelectorAll("a[href]");
-const loader = document.getElementById("loader");
-
-links.forEach(link => {
-
-link.addEventListener("click", function(e){
-
-const target = link.getAttribute("href");
-
-/* ignore external links */
-if(target.startsWith("http") || target.startsWith("#")) return;
-
-loader.classList.add("active");
-
-});
-
-});
-
-/* HIDE LOADER WHEN PAGE LOADS */
-
-window.addEventListener("load", () => {
-loader.classList.remove("active");
-});
-
 </script>
 </body>
 </html>
+
