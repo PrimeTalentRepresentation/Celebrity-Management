@@ -17,6 +17,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 <style>
 
+html {
+  scroll-behavior: smooth;
+}
 :root{
 --primary-color:hwb(44 22% 17%);
 --bg-color:#111211;
@@ -418,55 +421,69 @@ Chat on WhatsApp
 </div>
 
 <script>
+  // Elements
+  const loader = document.getElementById("loader");
+  const main = document.getElementById("main-content");
 
-// elements
-const loader = document.getElementById("loader");
-const main = document.getElementById("main-content");
-
-// show page after loading
-window.addEventListener("load", function () {
-
-  setTimeout(function () {
-    loader.style.display = "none";
-    main.style.display = "block";
-  }, 1000);
-
-});
-
-// show loader when navigating to another page
-document.querySelectorAll("a").forEach(link => {
-
-  link.addEventListener("click", function (e) {
-
-    const href = this.getAttribute("href");
-
-    // ignore empty links
-    if (!href) return;
-
-    // allow anchor links (#what-we-offer)
-    if (href.startsWith("#")) return;
-
-    // ignore external links
-    if (href.startsWith("http")) return;
-
-    e.preventDefault();
-
-    loader.style.display = "flex";
-    main.style.display = "none";
-
+  // Show page after loading
+  window.addEventListener("load", function () {
     setTimeout(function () {
-      window.location.href = href;
-    }, 600);
+      loader.style.display = "none";
+      main.style.display = "block";
 
+      // Scroll to hash if URL has one (e.g., #services)
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) target.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 1000);
   });
 
-});
+  // Show loader on internal navigation
+  document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
 
+      if (!href) return;
+
+      // Allow anchor links (#services, etc.)
+      if (href.startsWith("#")) return;
+
+      // Ignore external links (http, https)
+      if (href.startsWith("http")) return;
+
+      e.preventDefault();
+
+      loader.style.display = "flex";
+      main.style.display = "none";
+
+      setTimeout(function () {
+        window.location.href = href;
+      }, 600);
+    });
+  });
 </script>
   
+<script>
+  // Animate services list items on scroll
+  const serviceItems = document.querySelectorAll('.services li');
+
+  function showServicesOnScroll() {
+    const triggerBottom = window.innerHeight * 0.85; // when 85% of viewport
+    serviceItems.forEach(item => {
+      const itemTop = item.getBoundingClientRect().top;
+      if (itemTop < triggerBottom) {
+        item.classList.add('show');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', showServicesOnScroll);
+  window.addEventListener('load', showServicesOnScroll); // also trigger on load
+</script>
+
 </body>
 </html>
-
 
 
 
