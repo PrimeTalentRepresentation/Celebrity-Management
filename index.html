@@ -417,6 +417,8 @@ Chat on WhatsApp
 
 </div>
 
+
+Greg
 <script>
 
 // Loader element
@@ -430,22 +432,22 @@ links.forEach(link => {
 
     const target = link.getAttribute("href");
 
-    // Ignore external links and anchors
-    if (target.startsWith("http") || target.startsWith("#")) return;
+    // Only show loader for FAN EXP and BOOKINGS
+    if(target === "fan-experiences.html" || target === "dashboard.html"){
 
-    e.preventDefault(); // stop instant navigation
+      e.preventDefault(); // stop instant navigation
+      loader.classList.add("active"); // show loader
 
-    loader.classList.add("active"); // show loader
+      setTimeout(() => {
+        window.location.href = target;
+      }, 800);
 
-    setTimeout(() => {
-      window.location.href = target;
-    }, 500);
+    }
 
   });
 });
 
 // Hide loader when page loads
-
 window.addEventListener("load", () => {
 
 setTimeout(() => {
@@ -453,7 +455,7 @@ setTimeout(() => {
 document.getElementById("loader").style.display = "none";
 document.getElementById("main-content").style.display = "block";
 
-}, 2000); // loader shows for 2 seconds
+}, 2000);
 
 });
 
@@ -488,6 +490,7 @@ serviceItems.forEach(item=>{
   
 </body>
 </html>
+
 
 
 
