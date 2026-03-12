@@ -17,6 +17,41 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 <style>
 
+/* Header buttons below the title, side by side */
+header {
+  flex-direction: column; /* stack title and buttons */
+  align-items: flex-start;
+  gap: 0.8rem; /* space between title and nav */
+}
+
+header nav.header-buttons {
+  display: flex;
+  gap: 1rem; /* space between buttons */
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+/* Keep existing pill-style buttons */
+header nav.header-buttons a {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  background: #222;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+header nav.header-buttons a:hover {
+  background: var(--primary-color);
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* Optional: remove floating nav since we no longer need it */
+.floating-nav { display: none !important; }
+
 html {
   scroll-behavior: smooth;
 }
@@ -450,12 +485,12 @@ display:none;
 <div id="main-content">
 
 <header>
-<h1>PRIMETALENT</h1>
-<nav>
-<a href="fan-experiences.html">FAN EXP.</a>
-<a href="index.html">HOME</a>
-<a href="dashboard.html">BOOKINGS</a>
-</nav>
+  <h1>PRIMETALENT</h1>
+  <nav class="header-buttons">
+    <a href="fan-experiences.html">FAN EXP.</a>
+    <a href="index.html">HOME</a>
+    <a href="dashboard.html">BOOKINGS</a>
+  </nav>
 </header>
 
 <section class="hero">
@@ -597,7 +632,6 @@ Chat on WhatsApp
 
 </body>
 </html>
-
 
 
 
