@@ -419,37 +419,53 @@ Chat on WhatsApp
 
 <script>
 
+// Loader element
 const loader = document.getElementById("loader");
+const mainContent = document.getElementById("main-content");
+
+// Select all links
 const links = document.querySelectorAll("a[href]");
 
 links.forEach(link => {
 
-link.addEventListener("click", function(e){
+  link.addEventListener("click", function(e){
 
-const target = link.getAttribute("href");
+    const target = link.getAttribute("href");
 
-if(target.startsWith("http") || target.startsWith("#")) return;
+    // Ignore external links and anchors
+    if(target.startsWith("http") || target.startsWith("#")) return;
 
-e.preventDefault();
+    e.preventDefault();
 
-loader.classList.add("active");
+    // Show loader
+    loader.style.display = "flex";
+    mainContent.style.display = "none";
 
-setTimeout(()=>{
-window.location.href = target;
-},500);
+    setTimeout(()=>{
+      window.location.href = target;
+    },700);
+
+  });
 
 });
 
-});
-
+// Hide loader when page loads
 window.addEventListener("load", () => {
-loader.classList.remove("active");
+
+  setTimeout(() => {
+
+    loader.style.display = "none";
+    mainContent.style.display = "block";
+
+  }, 1200);
+
 });
 
 </script>
   
 </body>
 </html>
+
 
 
 
