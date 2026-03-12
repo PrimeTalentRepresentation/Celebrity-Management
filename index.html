@@ -419,6 +419,52 @@ Chat on WhatsApp
 
 <script>
 
+// Loader element
+const loader = document.getElementById("loader");
+const mainContent = document.getElementById("main-content");
+
+// Select all links
+const links = document.querySelectorAll("a[href]");
+
+links.forEach(link => {
+
+  link.addEventListener("click", function(e){
+
+    const target = link.getAttribute("href");
+
+    // Ignore external links and anchors
+    if(target.startsWith("http") || target.startsWith("#")) return;
+
+    e.preventDefault();
+
+    // Show loader
+    loader.style.display = "flex";
+    mainContent.style.display = "none";
+
+    setTimeout(()=>{
+      window.location.href = target;
+    },700);
+
+  });
+
+});
+
+// Hide loader when page loads
+window.addEventListener("load", () => {
+
+  setTimeout(() => {
+
+    loader.style.display = "none";
+    mainContent.style.display = "block";
+
+  }, 1200);
+
+});
+
+</script>
+  
+<script>
+
 // elements
 const loader = document.getElementById("loader");
 const main = document.getElementById("main-content");
@@ -460,6 +506,7 @@ document.querySelectorAll("a").forEach(link => {
   
 </body>
 </html>
+
 
 
 
