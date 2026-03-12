@@ -417,79 +417,40 @@ Chat on WhatsApp
 
 </div>
 
-
-Greg
 <script>
 
-// Loader element
 const loader = document.getElementById("loader");
-
-// Select all links
 const links = document.querySelectorAll("a[href]");
 
 links.forEach(link => {
-  link.addEventListener("click", function(e) {
 
-    const target = link.getAttribute("href");
+link.addEventListener("click", function(e){
 
-    // Only show loader for FAN EXP and BOOKINGS
-    if(target === "fan-experiences.html" || target === "dashboard.html"){
+const target = link.getAttribute("href");
 
-      e.preventDefault(); // stop instant navigation
-      loader.classList.add("active"); // show loader
+if(target.startsWith("http") || target.startsWith("#")) return;
 
-      setTimeout(() => {
-        window.location.href = target;
-      }, 800);
+e.preventDefault();
 
-    }
+loader.classList.add("active");
 
-  });
+setTimeout(()=>{
+window.location.href = target;
+},500);
+
 });
 
-// Hide loader when page loads
+});
+
 window.addEventListener("load", () => {
-
-setTimeout(() => {
-
-document.getElementById("loader").style.display = "none";
-document.getElementById("main-content").style.display = "block";
-
-}, 2000);
-
-});
-
-
-/* SERVICES ANIMATION */
-
-const serviceItems = document.querySelectorAll(".services li");
-
-const observer = new IntersectionObserver(entries => {
-
-  entries.forEach(entry => {
-
-    if (entry.isIntersecting) {
-
-      serviceItems.forEach((item, index) => {
-        setTimeout(() => {
-          item.classList.add("show");
-        }, index * 200);
-      });
-
-    }
-
-  });
-
-},{ threshold:0.2 });
-
-serviceItems.forEach(item=>{
-  observer.observe(item);
+loader.classList.remove("active");
 });
 
 </script>
   
 </body>
 </html>
+
 
 
 
