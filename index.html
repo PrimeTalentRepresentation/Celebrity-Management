@@ -407,6 +407,40 @@ Chat on WhatsApp
 © 2026 PRIMETALENT Agency. All rights reserved.
 </footer>
 <script>
+// Loader element
+const loader = document.getElementById("loader");
+
+// Select all links
+const links = document.querySelectorAll("a[href]");
+
+links.forEach(link => {
+  link.addEventListener("click", function(e) {
+
+    const target = link.getAttribute("href");
+
+    // Ignore external links and anchors
+    if (target.startsWith("http") || target.startsWith("#")) return;
+
+    e.preventDefault(); // stop instant navigation
+
+    loader.classList.add("active"); // show loader
+
+    // delay navigation so loader is visible
+    setTimeout(() => {
+      window.location.href = target;
+    }, 500);
+
+  });
+});
+
+// Hide loader when page loads
+window.addEventListener("load", () => {
+  loader.classList.remove("active");
+});<footer>
+© 2026 PRIMETALENT Agency. All rights reserved.
+</footer>
+
+<script>
 
 // Loader element
 const loader = document.getElementById("loader");
@@ -414,24 +448,28 @@ const loader = document.getElementById("loader");
 // Select all links
 const links = document.querySelectorAll("a[href]");
 
-// Show loader when internal link is clicked
 links.forEach(link => {
-  link.addEventListener("click", function () {
+  link.addEventListener("click", function(e) {
 
     const target = link.getAttribute("href");
 
     // Ignore external links and anchors
     if (target.startsWith("http") || target.startsWith("#")) return;
 
-    loader.classList.add("active");
+    e.preventDefault(); // stop instant navigation
+
+    loader.classList.add("active"); // show loader
+
+    setTimeout(() => {
+      window.location.href = target;
+    }, 500);
+
   });
 });
 
 // Hide loader when page loads
 window.addEventListener("load", () => {
-  setTimeout(() => {
-    loader.classList.remove("active");
-  }, 800);
+  loader.classList.remove("active");
 });
 
 
@@ -455,30 +493,13 @@ const observer = new IntersectionObserver(entries => {
 
   });
 
-}, { threshold: 0.2 });
+},{ threshold:0.2 });
 
-serviceItems.forEach(item => {
+serviceItems.forEach(item=>{
   observer.observe(item);
 });
-
-
-/* FORCE LOADER FOR BOOKINGS PAGE */
-
-const dashboardLink = document.querySelector('a[href="dashboard.html"]');
-
-if (dashboardLink) {
-
-  dashboardLink.addEventListener("click", () => {
-    loader.classList.add("active");
-
-    window.addEventListener("beforeunload", () => {
-      loader.classList.add("active");
-    });
-
-  });
-
-}
 
 </script>
 </body>
 </html>
+
