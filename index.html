@@ -76,6 +76,66 @@ nav a:hover{
 color:var(--primary-color);
 }
 
+/* Modern pill-style header buttons */
+header nav a {
+  display: inline-block;
+  margin-left: 1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;        /* pill shape */
+  background: #222;           /* dark background */
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+header nav a:hover {
+  background: var(--primary-color);
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* Floating nav for mobile (always reachable) */
+.floating-nav {
+  display: none; /* hidden on desktop */
+}
+
+@media (max-width:768px){
+  /* Hide normal nav on mobile if you want floating instead */
+  header nav {
+    display: none;
+  }
+
+  /* Show floating nav */
+  .floating-nav {
+    display: flex;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    flex-direction: column;
+    gap: 0.8rem;
+    z-index: 9999;
+  }
+
+  .floating-nav a {
+    display: block;
+    padding: 0.6rem 1rem;
+    border-radius: 25px;
+    background: var(--primary-color);
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .floating-nav a:hover {
+    background: #fff;
+    color: var(--primary-color);
+    transform: scale(1.05);
+  }
+}
+  
 /* HERO */
 
 .hero{
@@ -329,6 +389,11 @@ display:none;
 </style>
 </head>
 <body>
+  <div class="floating-nav">
+  <a href="fan-experiences.html">FAN EXP.</a>
+  <a href="index.html">HOME</a>
+  <a href="dashboard.html">BOOKINGS</a>
+</div>
   <div id="loader">
   <img src="https://play-lh.googleusercontent.com/LwGtHhLkT3OroJVkun0lucJ-UQ4iYTwTwluSdMFI0W6e88GI6OHGDsImfPLNyzbX3aE" alt="Loading">
   <h2>PRIMETALENT</h2>
@@ -484,6 +549,7 @@ Chat on WhatsApp
 
 </body>
 </html>
+
 
 
 
