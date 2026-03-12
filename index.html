@@ -403,36 +403,7 @@ Chat on WhatsApp
 
 </section>
 
-// Loader element
-const loader = document.getElementById("loader");
-
-// Select all links
-const links = document.querySelectorAll("a[href]");
-
-links.forEach(link => {
-  link.addEventListener("click", function(e) {
-
-    const target = link.getAttribute("href");
-
-    // Ignore external links and anchors
-    if (target.startsWith("http") || target.startsWith("#")) return;
-
-    e.preventDefault(); // stop instant navigation
-
-    loader.classList.add("active"); // show loader
-
-    // delay navigation so loader is visible
-    setTimeout(() => {
-      window.location.href = target;
-    }, 500);
-
-  });
-});
-
-// Hide loader when page loads
-window.addEventListener("load", () => {
-  loader.classList.remove("active");
-});<footer>
+<footer>
 © 2026 PRIMETALENT Agency. All rights reserved.
 </footer>
 
@@ -499,5 +470,6 @@ serviceItems.forEach(item=>{
   
 </body>
 </html>
+
 
 
