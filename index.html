@@ -430,6 +430,33 @@ Chat on WhatsApp
     }, 800); // delay for smoother fade-out
   });
 </script>
+<script>
+
+const serviceItems = document.querySelectorAll(".services li");
+
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+serviceItems.forEach((item,index)=>{
+setTimeout(()=>{
+item.classList.add("show");
+}, index * 200);
+});
+
+}
+
+});
+},{
+threshold:0.2
+});
+
+serviceItems.forEach(item=>{
+observer.observe(item);
+});
+
+</script>
     <script>
 
 /* SHOW LOADER WHEN LINK IS CLICKED */
@@ -461,5 +488,6 @@ loader.classList.remove("active");
 </script>
 </body>
 </html>
+
 
 
