@@ -9,6 +9,24 @@
 
 <style>
 
+/* Smaller header buttons for straight alignment */
+header nav.header-buttons a {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;  /* slightly smaller */
+  border-radius: 5px;      /* simple rounded corners */
+  background: var(--primary-color);
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;       /* smaller font for alignment */
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+header nav.header-buttons a:hover {
+  background: hwb(44 22% 10%);
+  color: #fff;
+}
+  
 :root{
 --primary-color:#d4af37;
 --bg-color:#121212;
@@ -390,6 +408,7 @@ loader.classList.remove("active");
 </script>
 </body>
 </html>
+
 
 
 
