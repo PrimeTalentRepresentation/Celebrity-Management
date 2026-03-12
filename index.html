@@ -419,45 +419,40 @@ Chat on WhatsApp
 
 <script>
 
-// Loader element
+// elements
 const loader = document.getElementById("loader");
-const mainContent = document.getElementById("main-content");
+const main = document.getElementById("main-content");
 
-// Select all links
-const links = document.querySelectorAll("a[href]");
+// show page after loading
+window.addEventListener("load", function(){
 
-links.forEach(link => {
-
-  link.addEventListener("click", function(e){
-
-    const target = link.getAttribute("href");
-
-    // Ignore external links and anchors
-    if(target.startsWith("http") || target.startsWith("#")) return;
-
-    e.preventDefault();
-
-    // Show loader
-    loader.style.display = "flex";
-    mainContent.style.display = "none";
-
-    setTimeout(()=>{
-      window.location.href = target;
-    },700);
-
-  });
+  setTimeout(function(){
+    loader.style.display = "none";
+    main.style.display = "block";
+  },1000);
 
 });
 
-// Hide loader when page loads
-window.addEventListener("load", () => {
+// show loader when navigating
+document.querySelectorAll("a").forEach(link => {
 
-  setTimeout(() => {
+  link.addEventListener("click", function(e){
 
-    loader.style.display = "none";
-    mainContent.style.display = "block";
+    const href = this.getAttribute("href");
 
-  }, 1200);
+    // ignore external links
+    if(href.startsWith("http") || href.startsWith("#")) return;
+
+    e.preventDefault();
+
+    loader.style.display = "flex";
+    main.style.display = "none";
+
+    setTimeout(function(){
+      window.location.href = href;
+    },600);
+
+  });
 
 });
 
@@ -465,6 +460,7 @@ window.addEventListener("load", () => {
   
 </body>
 </html>
+
 
 
 
