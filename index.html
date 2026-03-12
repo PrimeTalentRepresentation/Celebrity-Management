@@ -269,7 +269,6 @@ padding:2.5rem 1rem;
 }
 
 
-Greg
 /* PAGE LOADER */
 #loader {
   position: fixed;
@@ -320,6 +319,9 @@ Greg
 @keyframes fadeIn {
   to { opacity: 1; }
 }
+#main-content{
+display:none;
+}
 
 </style>
 </head>
@@ -328,6 +330,8 @@ Greg
   <img src="https://play-lh.googleusercontent.com/LwGtHhLkT3OroJVkun0lucJ-UQ4iYTwTwluSdMFI0W6e88GI6OHGDsImfPLNyzbX3aE" alt="Loading">
   <h2>PRIMETALENT</h2>
 </div>
+
+<div id="main-content">
 
 <header>
 <h1>PRIMETALENT</h1>
@@ -411,6 +415,8 @@ Chat on WhatsApp
 © 2026 PRIMETALENT Agency. All rights reserved.
 </footer>
 
+</div>
+
 <script>
 
 // Loader element
@@ -439,11 +445,16 @@ links.forEach(link => {
 });
 
 // Hide loader when page loads
+
 window.addEventListener("load", () => {
-  setTimeout(() => {
-    loader.style.opacity = "0";
-    loader.style.pointerEvents = "none";
-  }, 700);
+
+setTimeout(() => {
+
+document.getElementById("loader").style.display = "none";
+document.getElementById("main-content").style.display = "block";
+
+}, 2000); // loader shows for 2 seconds
+
 });
 
 
@@ -477,7 +488,6 @@ serviceItems.forEach(item=>{
   
 </body>
 </html>
-
 
 
 
