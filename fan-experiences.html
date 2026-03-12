@@ -9,6 +9,30 @@
 
 <style>
 
+/* Dynamically scale header buttons on very small screens */
+@media (max-width: 480px) {
+  header nav.header-buttons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 100%;
+  }
+
+  header nav.header-buttons a {
+    flex: 1 1 auto;           /* allow buttons to shrink/grow */
+    text-align: center;
+    padding: 0.4rem 0.6rem;   /* smaller padding for tiny screens */
+    font-size: 0.8rem;        /* smaller font size */
+    transform-origin: center; /* scale from center */
+    transition: transform 0.2s ease;
+  }
+
+  /* Optional: subtle hover/press scale effect for touch devices */
+  header nav.header-buttons a:active {
+    transform: scale(0.95);
+  }
+}
+  
 /* Smaller header buttons for straight alignment */
 header nav.header-buttons a {
   display: inline-block;
@@ -408,6 +432,7 @@ loader.classList.remove("active");
 </script>
 </body>
 </html>
+
 
 
 
