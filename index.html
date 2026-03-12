@@ -497,5 +497,23 @@ loader.classList.remove("active");
     });
   }
 </script>
+ <script>
+  // Show loader when "BOOKINGS" (dashboard.html) is clicked
+  const dashboardLink = document.querySelector('a[href="dashboard.html"]');
+  const loader = document.getElementById("loader");
+
+  if (dashboardLink && loader) {
+    dashboardLink.addEventListener("click", () => {
+      // Show loader immediately
+      loader.classList.add("active");
+
+      // Keep loader visible until the new page fully loads
+      window.addEventListener("beforeunload", () => {
+        loader.classList.add("active");
+      });
+    });
+  }
+</script>
 </body>
 </html>
+
