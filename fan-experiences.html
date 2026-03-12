@@ -9,6 +9,43 @@
 
 <style>
 
+/* HEADER BUTTONS FIX: Always side by side, phone responsive */
+header nav.header-buttons {
+  display: flex;
+  justify-content: flex-start; /* aligns buttons left, can use center if desired */
+  gap: 0.5rem;                 /* space between buttons */
+  flex-wrap: nowrap;            /* no wrapping, stay in one row */
+  width: 100%;
+}
+
+header nav.header-buttons a {
+  flex: 1 1 auto;               /* buttons can shrink to fit */
+  text-align: center;
+  padding: 0.4rem 0.6rem;       /* smaller padding for phones */
+  font-size: 0.8rem;            /* smaller font for tight fit */
+  border-radius: 20px;          /* pill shape */
+  background: var(--primary-color);
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;           /* prevent text from breaking */
+}
+
+header nav.header-buttons a:hover {
+  background: hwb(44 22% 10%);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Optional: dynamic scaling for ultra-small screens */
+@media (max-width: 360px) {
+  header nav.header-buttons a {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+  }
+}
+  
 /* Dynamically scale header buttons on very small screens */
 @media (max-width: 480px) {
   header nav.header-buttons {
@@ -432,6 +469,7 @@ loader.classList.remove("active");
 </script>
 </body>
 </html>
+
 
 
 
