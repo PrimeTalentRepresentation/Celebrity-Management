@@ -407,113 +407,78 @@ Chat on WhatsApp
 © 2026 PRIMETALENT Agency. All rights reserved.
 </footer>
 <script>
-  // Select all internal links and the loader element
-  const links = document.querySelectorAll("a[href]");
-  const loader = document.getElementById("loader");
 
-  // Show loader when a link is clicked
-  links.forEach(link => {
-    link.addEventListener("click", function(e) {
-      const target = link.getAttribute("href");
+// Loader element
+const loader = document.getElementById("loader");
 
-      // Ignore external links and anchors
-      if (target.startsWith("http") || target.startsWith("#")) return;
+// Select all links
+const links = document.querySelectorAll("a[href]");
 
-      loader.classList.add("active");
-    });
+// Show loader when internal link is clicked
+links.forEach(link => {
+  link.addEventListener("click", function () {
+
+    const target = link.getAttribute("href");
+
+    // Ignore external links and anchors
+    if (target.startsWith("http") || target.startsWith("#")) return;
+
+    loader.classList.add("active");
   });
+});
 
-  // Hide loader when the page finishes loading
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      loader.classList.remove("active");
-    }, 800); // delay for smoother fade-out
-  });
-</script>
-<script>
+// Hide loader when page loads
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    loader.classList.remove("active");
+  }, 800);
+});
+
+
+/* SERVICES ANIMATION */
 
 const serviceItems = document.querySelectorAll(".services li");
 
 const observer = new IntersectionObserver(entries => {
-entries.forEach(entry => {
 
-if(entry.isIntersecting){
+  entries.forEach(entry => {
 
-serviceItems.forEach((item,index)=>{
-setTimeout(()=>{
-item.classList.add("show");
-}, index * 200);
+    if (entry.isIntersecting) {
+
+      serviceItems.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.add("show");
+        }, index * 200);
+      });
+
+    }
+
+  });
+
+}, { threshold: 0.2 });
+
+serviceItems.forEach(item => {
+  observer.observe(item);
 });
+
+
+/* FORCE LOADER FOR BOOKINGS PAGE */
+
+const dashboardLink = document.querySelector('a[href="dashboard.html"]');
+
+if (dashboardLink) {
+
+  dashboardLink.addEventListener("click", () => {
+    loader.classList.add("active");
+
+    window.addEventListener("beforeunload", () => {
+      loader.classList.add("active");
+    });
+
+  });
 
 }
 
-});
-},{
-threshold:0.2
-});
-
-serviceItems.forEach(item=>{
-observer.observe(item);
-});
-
-</script>
-    <script>
-
-/* SHOW LOADER WHEN LINK IS CLICKED */
-
-const links = document.querySelectorAll("a[href]");
-const loader = document.getElementById("loader");
-
-links.forEach(link => {
-
-link.addEventListener("click", function(e){
-
-const target = link.getAttribute("href");
-
-/* ignore external links */
-if(target.startsWith("http") || target.startsWith("#")) return;
-
-loader.classList.add("active");
-
-});
-
-});
-
-/* HIDE LOADER WHEN PAGE LOADS */
-
-window.addEventListener("load", () => {
-loader.classList.remove("active");
-});
-
-</script>
-<script>
-  // Force loader to show when "BOOKINGS" is clicked
-  const dashboardLink = document.querySelector('a[href="dashboard.html"]');
-  const loader = document.getElementById("loader");
-
-  if (dashboardLink && loader) {
-    dashboardLink.addEventListener("click", () => {
-      loader.classList.add("active");
-    });
-  }
-</script>
- <script>
-  // Show loader when "BOOKINGS" (dashboard.html) is clicked
-  const dashboardLink = document.querySelector('a[href="dashboard.html"]');
-  const loader = document.getElementById("loader");
-
-  if (dashboardLink && loader) {
-    dashboardLink.addEventListener("click", () => {
-      // Show loader immediately
-      loader.classList.add("active");
-
-      // Keep loader visible until the new page fully loads
-      window.addEventListener("beforeunload", () => {
-        loader.classList.add("active");
-      });
-    });
-  }
 </script>
 </body>
 </html>
-
