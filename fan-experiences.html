@@ -367,6 +367,21 @@ header nav.header-buttons a:hover {
 
 /* Optional: remove floating nav since we no longer need it */
 .floating-nav { display: none !important; }
+
+/* Header button size + alignment fix (no design changes) */
+header nav.header-buttons{
+  display:flex;
+  flex-direction:row;
+  gap:0.5rem;
+  flex-wrap:nowrap;
+}
+
+header nav.header-buttons a{
+  padding:0.35rem 0.8rem;
+  font-size:0.8rem;
+  margin-left:0;
+}
+
   
 </style>
 </head>
@@ -469,6 +484,7 @@ loader.classList.remove("active");
 </script>
 </body>
 </html>
+
 
 
 
