@@ -19,28 +19,30 @@
 
 /* Header buttons below the title, side by side */
 header {
-  flex-direction: column; /* stack title and buttons */
+  flex-direction: column;
   align-items: flex-start;
-  gap: 0.8rem; /* space between title and nav */
+  gap: 0.5rem;
 }
 
 header nav.header-buttons {
   display: flex;
-  gap: 1rem; /* space between buttons */
-  flex-wrap: wrap;
-  margin-top: 0.5rem;
+  flex-direction: row;
+  gap: 0.5rem;          /* smaller spacing */
+  flex-wrap: nowrap;    /* keep them on one line */
+  margin-top: 0.3rem;
 }
 
-/* Keep existing pill-style buttons */
+/* Smaller pill buttons */
 header nav.header-buttons a {
   display: inline-block;
-  padding: 0.6rem 1.2rem;
-  border-radius: 25px;
+  padding: 0.35rem 0.8rem;   /* smaller button */
+  font-size: 0.75rem;        /* smaller text */
+  border-radius: 18px;
   background: #222;
   color: var(--text-color);
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 header nav.header-buttons a:hover {
@@ -48,34 +50,6 @@ header nav.header-buttons a:hover {
   color: #000;
   transform: scale(1.05);
 }
-
-/* Optional: remove floating nav since we no longer need it */
-.floating-nav { display: none !important; }
-
-html {
-  scroll-behavior: smooth;
-}
-:root{
---primary-color:hwb(44 22% 17%);
---bg-color:#111211;
---text-color:#f0f0f0;
---card-bg:#1e1e1e;
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:'Montserrat',sans-serif;
-background-color:var(--bg-color);
-color:var(--text-color);
-line-height:1.6;
-}
-
-/* HEADER */
 
 header{
 background:#000;
@@ -632,6 +606,7 @@ Chat on WhatsApp
 
 </body>
 </html>
+
 
 
 
