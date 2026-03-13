@@ -17,41 +17,55 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 <style>
 
-/* HEADER BUTTONS FIX: Always side by side, phone responsive */
-header nav.header-buttons {
-  display: flex;
-  justify-content: flex-start; /* aligns buttons left, can use center if desired */
-  gap: 0.5rem;                 /* space between buttons */
-  flex-wrap: nowrap;            /* no wrapping, stay in one row */
-  width: 100%;
+/* Header buttons below the title, side by side */
+header {
+  flex-direction: column; /* stack title and buttons */
+  align-items: flex-start;
+  gap: 0.8rem; /* space between title and nav */
 }
 
+header nav.header-buttons {
+  display: flex;
+  gap: 1rem; /* space between buttons */
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+/* Keep existing pill-style buttons */
 header nav.header-buttons a {
-  flex: 1 1 auto;               /* buttons can shrink to fit */
-  text-align: center;
-  padding: 0.4rem 0.6rem;       /* smaller padding for phones */
-  font-size: 0.8rem;            /* smaller font for tight fit */
-  border-radius: 20px;          /* pill shape */
-  background: var(--primary-color);
-  color: #000;
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  background: #222;
+  color: var(--text-color);
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
-  white-space: nowrap;           /* prevent text from breaking */
 }
 
 header nav.header-buttons a:hover {
-  background: hwb(44 22% 10%);
-  color: #fff;
+  background: var(--primary-color);
+  color: #000;
   transform: scale(1.05);
 }
 
-/* Optional: dynamic scaling for ultra-small screens */
-@media (max-width: 360px) {
-  header nav.header-buttons a {
-    padding: 0.3rem 0.5rem;
-    font-size: 0.7rem;
-  }
+/* Optional: remove floating nav since we no longer need it */
+.floating-nav { display: none !important; }
+
+html {
+  scroll-behavior: smooth;
+}
+:root{
+--primary-color:hwb(44 22% 17%);
+--bg-color:#111211;
+--text-color:#f0f0f0;
+--card-bg:#1e1e1e;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
@@ -454,24 +468,6 @@ display:none;
     transform: scale(1.05);
   }
 }
-
-/* Smaller header buttons for straight alignment */
-header nav.header-buttons a {
-  display: inline-block;
-  padding: 0.4rem 0.9rem;  /* slightly smaller */
-  border-radius: 5px;      /* simple rounded corners */
-  background: var(--primary-color);
-  color: #000;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;       /* smaller font for alignment */
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-header nav.header-buttons a:hover {
-  background: hwb(44 22% 10%);
-  color: #fff;
-}
   
 </style>
 </head>
@@ -636,16 +632,6 @@ Chat on WhatsApp
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
 
 
 
